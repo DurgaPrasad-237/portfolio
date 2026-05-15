@@ -295,122 +295,94 @@ section { position: relative; z-index: 1; }
 
 /* PROJECTS CAROUSEL */
 #projects { background: var(--bg); }
-.carousel-wrapper {
-  position: relative;
-}
-.carousel-viewport {
-  overflow: hidden;
-  position: relative;
-}
+.carousel-wrapper { position: relative; }
+.carousel-viewport { overflow: hidden; }
 .carousel-track {
   display: flex;
-  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 0.55s cubic-bezier(0.77, 0, 0.175, 1);
   will-change: transform;
 }
 .project-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  padding: 48px; position: relative; overflow: hidden;
-  display: flex; flex-direction: column;
+  padding: 32px 28px 28px;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 14px;
   min-width: 100%; box-sizing: border-box;
-  transition: border-color 0.35s;
 }
 .project-card::before {
   content: ''; position: absolute;
   top: 0; left: 0; right: 0; height: 2px;
   background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
 }
-.project-card-inner {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 56px; align-items: start;
-  height: 100%;
-}
-.project-card-inner.single-col { grid-template-columns: 1fr; max-width: 700px; }
 .project-num {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.2em;
-  color: var(--muted); margin-bottom: 20px;
-  display: flex; align-items: center; gap: 12px;
-}
-.project-num::after {
-  content: ''; flex: 1; height: 1px; background: var(--border);
+  font-size: 10px; letter-spacing: 0.18em;
+  color: var(--muted);
 }
 .project-title {
   font-family: 'Playfair Display', serif;
-  font-size: 28px; font-weight: 700;
-  color: var(--text); margin-bottom: 16px; line-height: 1.2;
+  font-size: clamp(18px, 3vw, 24px); font-weight: 700;
+  color: var(--text); line-height: 1.25;
 }
-.project-desc { font-size: 14px; line-height: 1.85; color: var(--muted); margin-bottom: 28px; }
+.project-desc {
+  font-size: 13px; line-height: 1.75;
+  color: var(--muted); font-weight: 300;
+  max-width: 600px;
+}
 .project-tech {
-  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
+  display: flex; flex-wrap: wrap; gap: 7px;
 }
 .tech-tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent2); border: 1px solid rgba(124,106,245,0.3);
-  padding: 5px 12px;
-  transition: all 0.25s;
+  color: var(--accent2); border: 1px solid rgba(124,106,245,0.25);
+  padding: 4px 10px;
+  transition: background 0.2s;
 }
-.tech-tag:hover { background: rgba(124,106,245,0.1); }
-.project-links { display: flex; gap: 16px; }
+.tech-tag:hover { background: rgba(124,106,245,0.08); }
+.project-links { display: flex; gap: 16px; padding-top: 4px; }
 .project-link {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--accent); text-decoration: none;
   border-bottom: 1px solid rgba(0,212,255,0.3);
   padding-bottom: 2px;
-  transition: border-color 0.25s;
+  transition: border-color 0.2s;
 }
 .project-link:hover { border-color: var(--accent); }
-.project-highlights {
-  list-style: none; display: flex; flex-direction: column; gap: 12px;
-  padding-top: 8px;
-}
-.project-highlights li {
-  font-size: 13px; line-height: 1.7; color: var(--muted);
-  padding-left: 18px; position: relative;
-}
-.project-highlights li::before {
-  content: '›'; position: absolute; left: 0;
-  color: var(--accent); font-size: 15px; line-height: 1.5;
-}
 .project-card-bg-num {
-  position: absolute; bottom: -20px; right: 32px;
+  position: absolute; bottom: -16px; right: 20px;
   font-family: 'Playfair Display', serif;
-  font-weight: 900; font-size: 160px;
-  color: rgba(255,255,255,0.02);
+  font-weight: 900; font-size: 100px;
+  color: rgba(255,255,255,0.025);
   user-select: none; pointer-events: none; line-height: 1;
 }
 
 /* Carousel controls */
 .carousel-controls {
   display: flex; align-items: center; justify-content: space-between;
-  margin-top: 28px;
+  margin-top: 20px;
 }
-.carousel-dots {
-  display: flex; gap: 10px; align-items: center;
-}
+.carousel-dots { display: flex; gap: 8px; align-items: center; }
 .cdot {
-  width: 28px; height: 3px;
-  background: var(--border); cursor: none;
+  width: 24px; height: 3px;
+  background: var(--border); cursor: pointer;
   transition: background 0.3s, width 0.3s;
   border-radius: 2px;
 }
-.cdot.active { background: var(--accent); width: 48px; }
-.carousel-arrows { display: flex; gap: 12px; }
+.cdot.active { background: var(--accent); width: 40px; }
+.carousel-arrows { display: flex; gap: 10px; }
 .carr-btn {
-  width: 44px; height: 44px;
+  width: 38px; height: 38px;
   border: 1px solid var(--border);
   background: transparent; color: var(--muted);
-  font-size: 18px; cursor: none;
+  font-size: 16px; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: border-color 0.25s, color 0.25s, background 0.25s;
 }
-.carr-btn:hover {
-  border-color: var(--accent); color: var(--accent);
-  background: rgba(0,212,255,0.05);
-}
-.carr-btn:disabled { opacity: 0.25; pointer-events: none; }
+.carr-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,0.05); }
+.carr-btn:disabled { opacity: 0.2; pointer-events: none; }
 .carousel-counter {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px; letter-spacing: 0.1em; color: var(--muted);
@@ -659,7 +631,7 @@ footer span { color: var(--accent); }
 </div>
 
 <nav>
-  <div class="nav-logo"><span>Durga </span>Prasad<span></span></div>
+  <div class="nav-logo">Durga<span> </span>Prasad<span></span></div>
   <div class="nav-links">
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
@@ -680,7 +652,7 @@ footer span { color: var(--accent); }
     <h1 class="hero-name">
       Durga<br><span class="accent-word">Prasad</span>
     </h1>
-    <p class="hero-role">Software Engineer <span>&</span> Applied Data Science & ML</p>
+    <p class="hero-role"><span>Software Engineer | </span><span>Applied Data Science & ML Engineer</span></p>
     <p class="hero-bio">
       Python developer with ~2 years of experience, now deep in data analysis 
       and machine learning. I turn raw, messy datasets into models and insights 
@@ -707,7 +679,7 @@ footer span { color: var(--accent); }
         </div>
         <div class="stat-box">
           <div class="stat-val">6+</div>
-          <div class="stat-lbl">Tech Stacks</div>
+          <div class="stat-lbl">Tech Stack</div>
         </div>
         <div class="stat-box">
           <div class="stat-val">10+</div>
@@ -779,152 +751,75 @@ footer span { color: var(--accent); }
 
           <!-- Slide 1: Cricket -->
           <div class="project-card">
-            <div class="project-card-inner">
-              <div>
-                <div class="project-num">01 / 03 &nbsp; Featured</div>
-                <div class="project-title">Cricket Match Prediction System</div>
-                <p class="project-desc">
-                  An end-to-end ML system for predicting IPL match outcomes — both 
-                  pre-match and live (post 2nd innings). Deployed as an interactive 
-                  Streamlit app with real-time inference.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">XGBoost</span>
-                  <span class="tech-tag">Scikit-learn</span>
-                  <span class="tech-tag">Streamlit</span>
-                  <span class="tech-tag">Pandas</span>
-                  <span class="tech-tag">NumPy</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://iplprediction-dp.streamlit.app/" target="_blank" class="project-link">Live Demo ↗</a>
-                </div>
-              </div>
-              <div>
-                <ul class="project-highlights">
-                  <li>Collected & cleaned cricket dataset from Kaggle, performed full EDA and handled missing values</li>
-                  <li>Built pre-match prediction using Logistic Regression with cross-validation for generalization</li>
-                  <li>Developed live match system (post 2nd innings) with Logistic Regression, Random Forest & XGBoost</li>
-                  <li>Implemented preprocessing pipelines with encoding for consistent training and inference</li>
-                  <li>Hyperparameter tuning via RandomizedSearchCV; exported best model as .pkl for deployment</li>
-                  <li>Interactive Streamlit prediction interface deployed for real-world use</li>
-                </ul>
-              </div>
+            <div class="project-num">01 / 04 &nbsp;·&nbsp; Featured</div>
+            <div class="project-title">Cricket Match Prediction System</div>
+            <p class="project-desc">An end-to-end ML system for predicting IPL match outcomes — both pre-match and live (post 2nd innings). Deployed as an interactive Streamlit app with real-time inference.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">XGBoost</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+            </div>
+            <div class="project-links">
+              <a href="https://iplprediction-dp.streamlit.app/" target="_blank" class="project-link">Live Demo ↗</a>
             </div>
             <div class="project-card-bg-num">01</div>
           </div>
 
           <!-- Slide 2: Healthcare -->
           <div class="project-card">
-            <div class="project-card-inner">
-              <div>
-                <div class="project-num">02 / 03</div>
-                <div class="project-title">System Capacity & Care Load Analytics</div>
-                <p class="project-desc">
-                  A healthcare analytics framework to monitor total system care load and 
-                  capacity trends for unaccompanied children, built on time-series data 
-                  with rolling window stress detection.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">Pandas</span>
-                  <span class="tech-tag">NumPy</span>
-                  <span class="tech-tag">Matplotlib</span>
-                  <span class="tech-tag">Streamlit</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://uaccaresystemanalytics-dgzyktqnda4tfjcyulhwj5.streamlit.app/" class="project-link">View Project ↗</a>
-                </div>
-              </div>
-              <div>
-                <ul class="project-highlights">
-                  <li>Built analytics framework to monitor total system care load and capacity trends using time-series data</li>
-                  <li>Processed and validated multi-source datasets ensuring consistency across intake, transfer & discharge metrics</li>
-                  <li>Developed KPIs: total system load, net intake pressure, backlog indicator, care load growth rate</li>
-                  <li>Performed rolling window analysis (7-day, 14-day) to detect sustained capacity stress</li>
-                  <li>Designed interactive Streamlit dashboard for real-time monitoring and decision support</li>
-                </ul>
-              </div>
+            <div class="project-num">02 / 04</div>
+            <div class="project-title">System Capacity & Care Load Analytics</div>
+            <p class="project-desc">A healthcare analytics framework to monitor total system care load and capacity trends for unaccompanied children, built on time-series data with rolling window stress detection.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Matplotlib</span>
+              <span class="tech-tag">Streamlit</span>
+            </div>
+            <div class="project-links">
+              <a href="https://uaccaresystemanalytics-dgzyktqnda4tfjcyulhwj5.streamlit.app/" target="_blank" class="project-link">View Project ↗</a>
             </div>
             <div class="project-card-bg-num">02</div>
           </div>
 
           <!-- Slide 3: NYC Taxi -->
           <div class="project-card">
-            <div class="project-card-inner">
-              <div>
-                <div class="project-num">03 / 04</div>
-                <div class="project-title">NYC Yellow Taxi Data Analysis</div>
-                <p class="project-desc">
-                  Deep-dive analysis of 300K+ taxi trip records to uncover peak demand, 
-                  revenue patterns, and geospatial hotspots — generating actionable 
-                  insights for demand-based positioning and pricing.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">GeoPandas</span>
-                  <span class="tech-tag">Pandas</span>
-                  <span class="tech-tag">Seaborn</span>
-                  <span class="tech-tag">NumPy</span>
-                  <span class="tech-tag">Matplotlib</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/DurgaPrasad-237/EDA_Optimising_NYC_Taxis" class="project-link">GitHub ↗</a>
-
-                </div>
-              </div>
-              <div>
-                <ul class="project-highlights">
-                  <li>Analyzed 300K+ taxi trip records to identify peak demand periods and revenue patterns</li>
-                  <li>Cleaned and pre-processed large datasets: missing values, duplicates, and outliers removed</li>
-                  <li>Performed time-series analysis to uncover hourly and daily ride demand trends</li>
-                  <li>Conducted geospatial analysis (GeoPandas) to identify high-demand pickup and drop-off zones</li>
-                  <li>Generated insights for demand-based taxi positioning and pricing strategy optimization</li>
-                </ul>
-              </div>
+            <div class="project-num">03 / 04</div>
+            <div class="project-title">NYC Yellow Taxi Data Analysis</div>
+            <p class="project-desc">Deep-dive analysis of 300K+ taxi trip records to uncover peak demand, revenue patterns, and geospatial hotspots — generating actionable insights for positioning and pricing.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">GeoPandas</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Seaborn</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Matplotlib</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/DurgaPrasad-237/EDA_Optimising_NYC_Taxis" target="_blank" class="project-link">GitHub ↗</a>
             </div>
             <div class="project-card-bg-num">03</div>
           </div>
 
-
-
-
-           <div class="project-card">
-            <div class="project-card-inner">
-              <div>
-                <div class="project-num">04 / 04</div>
-                <div class="project-title">ML-Based Buyer Segmentation & Investment Profiling for Real Estate</div>
-                <p class="project-desc">
-                 Built a machine learning-based real estate customer segmentation system using K-Means clustering, behavioral analytics,
-                and Streamlit to identify buyer personas and generate business insights.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">Unsupervised Learning</span>
-                  <span class="tech-tag">Scikit-learn</span>
-                  <span class="tech-tag">Seaborn</span>
-                  <span class="tech-tag">Pandas</span>
-                  <span class="tech-tag">Matplotlib</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/DurgaPrasad-237/EDA_Optimising_NYC_Taxis" class="project-link">Live ↗</a>
-                </div>
-              </div>
-              <div>
-                <ul class="project-highlights">
-                  <li> 
-Developed a machine learning-based customer segmentation system to identify real estate
-buyer personas using demographic and investment behavior data</li>
-                  <li>Processed and analyzed datasets containing 2,000+ client records and 10,000+ property
-transactions</li>
-                  <li>Performed data preprocessing, feature engineering, encoding, and scaling to prepare structured
-datasets for clustering analysis</li>
-                  <li>Applied K-Means clustering and evaluated cluster quality using Elbow Method and Silhouette
-Score techniques</li>
- <li>Identified four major buyer segments including Global Investors, First-Time Buyers, Corporate
-Buyers, and Luxury Investors</li>
-                </ul>
-              </div>
+          <!-- Slide 4: Real Estate -->
+          <div class="project-card">
+            <div class="project-num">04 / 04</div>
+            <div class="project-title">ML-Based Buyer Segmentation for Real Estate</div>
+            <p class="project-desc">ML-powered customer segmentation using K-Means clustering on 2,000+ client records to identify buyer personas — Global Investors, First-Time Buyers, Corporate Buyers & Luxury Investors.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">K-Means</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">Seaborn</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Matplotlib</span>
+            </div>
+            <div class="project-links">
+              <a href="https://durgaprasad-237-ml-based-buyer-segmentation-and-inve-app-8rlomo.streamlit.app/" class="project-link">Live ↗</a>
             </div>
             <div class="project-card-bg-num">04</div>
           </div>
@@ -938,7 +833,7 @@ Buyers, and Luxury Investors</li>
           <div class="cdot active"></div>
           <div class="cdot"></div>
           <div class="cdot"></div>
-           <div class="cdot"></div>
+          <div class="cdot"></div>
         </div>
         <div style="display:flex; align-items:center; gap:20px;">
           <div class="carousel-counter"><span id="curSlide">01</span> / 04</div>
@@ -1023,12 +918,12 @@ Buyers, and Luxury Investors</li>
 </section>
 
 <!-- EXPERIENCE -->
- 
 <section id="experience">
   <div class="section-inner">
     <div class="section-eyebrow reveal">Work History</div>
     <h2 class="section-title reveal delay-1">Where I've <em>shipped code</em></h2>
-     <div class="exp-card reveal delay-1">
+
+    <div class="exp-card reveal delay-1 visible">
       <div class="exp-left">
         <div class="exp-period">FEB 2026 — APR 2026</div>
         <div class="exp-company">Unified Mentor</div>
@@ -1042,6 +937,8 @@ Buyers, and Luxury Investors</li>
         </ul>
       </div>
     </div>
+
+
     <div class="exp-card reveal delay-1">
       <div class="exp-left">
         <div class="exp-period">Apr 2024 — Feb 2026</div>
@@ -1136,7 +1033,7 @@ Buyers, and Luxury Investors</li>
 
 <footer>
   <p>© 2025 <span>Durga Prasad</span>. Built with intention.</p>
-  <p>Python <span>◈</span> ML <span>◈</span> Data Science<span>◈</span> Software Engineer</p>
+  <p>Python <span>◈</span> ML <span>◈</span> Data Analysis</p>
 </footer>
 
 <script>
