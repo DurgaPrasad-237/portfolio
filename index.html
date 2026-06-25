@@ -751,7 +751,7 @@ footer span { color: var(--accent); }
 
           <!-- Slide 1: Cricket -->
           <div class="project-card">
-            <div class="project-num">01 / 04 &nbsp;·&nbsp; Featured</div>
+            <div class="project-num">01 / 05 &nbsp;·&nbsp; Featured</div>
             <div class="project-title">Cricket Match Prediction System</div>
             <p class="project-desc">An end-to-end ML system for predicting IPL match outcomes — both pre-match and live (post 2nd innings). Deployed as an interactive Streamlit app with real-time inference.</p>
             <div class="project-tech">
@@ -770,7 +770,7 @@ footer span { color: var(--accent); }
 
           <!-- Slide 2: Healthcare -->
           <div class="project-card">
-            <div class="project-num">02 / 04</div>
+            <div class="project-num">02 / 05</div>
             <div class="project-title">System Capacity & Care Load Analytics</div>
             <p class="project-desc">A healthcare analytics framework to monitor total system care load and capacity trends for unaccompanied children, built on time-series data with rolling window stress detection.</p>
             <div class="project-tech">
@@ -786,9 +786,28 @@ footer span { color: var(--accent); }
             <div class="project-card-bg-num">02</div>
           </div>
 
+          <!-- Slide 3 : Credit Card Fraud Detection -->
+            <div class="project-card">
+            <div class="project-num">03 / 05</div>
+            <div class="project-title">Credit Card Fraud Detection</div>
+            <p class="project-desc">A machine learning system to detect fraudulent credit card transactions from 1.29M real-world records, achieving ROC-AUC of 0.983 and estimating ~$402K/month in fraud savings for Finex Bank.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Matplotlib</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">XGBoost</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/DurgaPrasad-237/CC-Fruad-Detection" target="_blank" class="project-link">GitHub Link ↗</a>
+            </div>
+            <div class="project-card-bg-num">03</div>
+          </div>
+
           <!-- Slide 3: NYC Taxi -->
           <div class="project-card">
-            <div class="project-num">03 / 04</div>
+            <div class="project-num">04 / 05</div>
             <div class="project-title">NYC Yellow Taxi Data Analysis</div>
             <p class="project-desc">Deep-dive analysis of 300K+ taxi trip records to uncover peak demand, revenue patterns, and geospatial hotspots — generating actionable insights for positioning and pricing.</p>
             <div class="project-tech">
@@ -802,12 +821,12 @@ footer span { color: var(--accent); }
             <div class="project-links">
               <a href="https://github.com/DurgaPrasad-237/EDA_Optimising_NYC_Taxis" target="_blank" class="project-link">GitHub ↗</a>
             </div>
-            <div class="project-card-bg-num">03</div>
+            <div class="project-card-bg-num">04</div>
           </div>
 
           <!-- Slide 4: Real Estate -->
           <div class="project-card">
-            <div class="project-num">04 / 04</div>
+            <div class="project-num">05 / 05</div>
             <div class="project-title">ML-Based Buyer Segmentation for Real Estate</div>
             <p class="project-desc">ML-powered customer segmentation using K-Means clustering on 2,000+ client records to identify buyer personas — Global Investors, First-Time Buyers, Corporate Buyers & Luxury Investors.</p>
             <div class="project-tech">
@@ -821,7 +840,7 @@ footer span { color: var(--accent); }
             <div class="project-links">
               <a href="https://durgaprasad-237-ml-based-buyer-segmentation-and-inve-app-8rlomo.streamlit.app/" class="project-link">Live ↗</a>
             </div>
-            <div class="project-card-bg-num">04</div>
+            <div class="project-card-bg-num">05</div>
           </div>
 
         </div>
@@ -834,9 +853,10 @@ footer span { color: var(--accent); }
           <div class="cdot"></div>
           <div class="cdot"></div>
           <div class="cdot"></div>
+          <div class="cdot"></div>
         </div>
         <div style="display:flex; align-items:center; gap:20px;">
-          <div class="carousel-counter"><span id="curSlide">01</span> / 04</div>
+          <div class="carousel-counter"><span id="curSlide">01</span> / 05</div>
           <div class="carousel-arrows">
             <button class="carr-btn" id="prevBtn" disabled>&#8592;</button>
             <button class="carr-btn" id="nextBtn">&#8594;</button>
@@ -1069,7 +1089,7 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const curSlideEl = document.getElementById('curSlide');
 let current = 0;
-const total = 4;
+const total = 5;
 
 function goTo(idx) {
   current = idx;
